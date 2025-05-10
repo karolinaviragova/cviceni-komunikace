@@ -9,16 +9,19 @@ Zadání: Začneme velmi jednoduše. Zařiďte, aby se po kliknutí na tlačítk
 export const Ukol1 = () => {
   const [jmeno, setJmeno] = useState("Jirka");
 
+  const handleName = (e) => {
+    setJmeno(e.target.textContent);
+  }
   return (
     <>
       <p>
         <strong>{jmeno}</strong>
       </p>
       <div>
-        <button>Jirka</button>
-        <button>Honza</button>
-        <button>Tomáš</button>
-        <button>Šimon</button>
+        <button onClick={handleName}>Jirka</button>
+        <button onClick={handleName}>Honza</button>
+        <button onClick={handleName}>Tomáš</button>
+        <button onClick={handleName}>Šimon</button>
       </div>
     </>
   );
